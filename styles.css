@@ -1,198 +1,533 @@
-/* charity: water Brand Colors & Fonts
-
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
-*/
-
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
-
-/* Set up the main font and background color for the whole page */
-body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #222;
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+/* Use Nunito for body and subheadings, Merriweather for headings */
+body {
+  font-family: 'Nunito', sans-serif; /* Nunito for body text */
+  background-color: #fef6e4;
+  color: #000;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
+h1 {
+  font-family: 'Merriweather', serif; /* Merriweather for main heading */
+  font-weight: 300; /* Light font weight */
+  font-size: 3.6rem !important; /* Force main header to be even larger */
+  margin-bottom: 20px;
+  line-height: 1.2;
+  padding: 40px; /* Add padding around the main header */
+  text-align: center; /* Center the main header */
 
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+.subheadline {
+  font-family: 'Nunito', sans-serif; /* Nunito for subheadline */
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 400px;
 }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding-bottom: 0; /* Remove bottom padding so hero image touches next section */
 }
 
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
+.left-column, .right-column {
+  flex: 1 1 50%;
+  padding: 40px;
+}
+
+/* Left column: center all text elements horizontally and vertically */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center all content horizontally */
+  text-align: center; /* Center text inside elements */
+  height: 100%;
+  margin-top: 45px; /* Set space below the menu bar to 45px */
+}
+
+/* Make sure all text elements in left-column are centered */
+.left-column h1,
+.left-column .subheadline,
+.left-column .donation-form,
+.left-column .progress-bar,
+.left-column .progress-labels,
+.left-column .project-cost {
   text-align: center;
-  padding: 30px 20px;
+  align-self: center;
 }
 
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
-}
-
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
-}
-
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
-}
-
-/* Add some spacing between sections */
-section {
+.logo {
+  width: 140px;
   margin-bottom: 20px;
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
+.donation-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+input {
+  padding: 10px;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #f9c000;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  background-color: #fff3c4;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  max-width: 600px; /* Increased from 400px to 600px */
+  width: 100%; /* Allow it to stretch if possible */
+}
+
+.filled {
+  background-color: #f9c000;
+  width: 75.45%;
+  height: 100%;
+}
+
+/* Progress labels: align raised to left and to-go to right of the progress bar */
+.progress-labels {
+  display: flex;
+  justify-content: space-between; /* Keep labels at ends */
+  max-width: 600px; /* Match the progress bar length */
+  width: 100%; /* Stretch to match progress bar */
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  padding: 0 2px; /* Small padding for better alignment */
+}
+
+.progress-labels span:first-child {
+  text-align: left; /* Raised at the start */
+}
+
+.progress-labels span:last-child {
+  text-align: right; /* To go at the end */
+}
+
+.project-cost {
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  padding-bottom: 50px; /* Add padding underneath the text */
+}
+
+/* Hero image styles */
+.hero-image {
+  width: 100%;
+  height: auto; /* Show the original image height */
+  object-fit: cover; /* Fill the container */
+  object-position: center; /* Keep the center of the image */
+  border-radius: 0; /* No rounded corners */
+  display: block;
+  margin-top: 0; /* Remove padding above the hero image */
+  margin-right: 0;
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+/* Menu bar styles */
+.menu-bar {
+  background-color: #e2e3e8; /* Slightly lighter grey color */
+  display: flex; /* Use flex to align items */
+  align-items: center; /* Center items vertically */
+  height: 90px; /* Increased height for the menu bar */
+  padding: 0 30px; /* Add some horizontal padding */
+  justify-content: space-between; /* Space between logo and button */
+}
+
+.menu-bar .logo {
+  width: 180px; /* Increased logo size for menu bar */
+  margin-bottom: 0; /* Remove bottom margin for menu bar logo */
+}
+
+.give-today-btn {
+  background-color: #f9c000;
+  color: #1a1a1a;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s;
+  margin-left: auto;
+}
+.give-today-btn:hover {
+  background-color: #ffd700;
+}
+
+/* Donation form styles */
+.donation-form label {
+  text-transform: uppercase; /* Make label all caps */
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-right: 10px;
+}
+
+.donation-form input[type="number"],
+.donation-form input[type="text"] {
+  font-size: 1rem; /* Make input text smaller */
+  padding: 8px 12px; /* Make input box smaller vertically */
+  width: 260px; /* Make input box longer horizontally */
+}
+
+.donation-form button {
+  font-size: 0.9rem; /* Make button text slightly smaller */
+  text-transform: uppercase; /* Keep all caps */
+  padding: 8px 18px; /* Make button smaller vertically */
+  background-color: #f9c000;
+  color: #1a1a1a;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s;
+}
+
+/* Add a hover effect to the ACT NOW button, similar to GIVE TODAY */
+.donation-form button:hover {
+  background-color: #ffd700;
+}
+
+h1 {
+  font-size: 3.2rem; /* Make main header larger */
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+/* Menu bar styles */
+.menu-bar {
+  background-color: #e2e3e8; /* Slightly lighter grey color */
+  display: flex; /* Use flex to align items */
+  align-items: center; /* Center items vertically */
+  height: 90px; /* Increased height for the menu bar */
+  padding: 0 30px; /* Add some horizontal padding */
+}
+
+.menu-bar .logo {
+  width: 180px; /* Increased logo size for menu bar */
+  margin-bottom: 0; /* Remove bottom margin for menu bar logo */
+}
+
+/* Make sure the right column starts at the top, under the menu bar */
+.right-column {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0;
+  padding-right: 0; /* Remove right padding so image touches right edge */
+  padding-bottom: 0; /* Remove bottom padding so image touches next section */
+}
+
+/* Remove extra margin for hero image on mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0; /* Remove padding on mobile */
   }
 
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
+  .left-column {
+    flex: 1 1 100%;
+    padding: 24px; /* Add padding back to text column for cleaner look */
   }
 
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
+  .right-column {
+    flex: 1 1 100%;
+    order: 2;
+    padding: 0; /* No padding for image column */
+    margin: 0;
+    width: 100vw;
+    max-width: 100vw;
   }
 
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
+  .hero-image {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
   }
+}
 
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
+/* Impact section: black background and white text */
+.impact-section {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding-top: 80px; /* Add space above the heading after the black background begins */
+  padding-bottom: 0; /* Remove space below the section so it touches the footer */
+}
+
+.impact-header h2,
+.impact-header p {
+  color: #fff;
+}
+
+/* Impact section: center header, make text larger, subheading and body white and centered */
+.impact-header h2 {
+  color: #fff;
+  text-align: center;
+  font-family: 'Merriweather', serif; /* Use Merriweather for section heading */
+  font-weight: 300; /* Light font weight */
+  font-size: 2.4rem; /* Larger heading */
+  margin-bottom: 18px;
+  /* Remove margin-top if present to avoid double spacing */
+}
+
+.impact-header p {
+  color: #fff !important; /* Force the subheading text to be white */
+  text-align: center;
+  font-family: 'Nunito', sans-serif; /* Use Nunito for body and card text */
+  font-size: 1.3rem; /* Larger subheading */
+  margin-bottom: 40px;
+}
+
+.impact-card h3,
+.impact-card p {
+  color: #fff; /* Make all card text white */
+}
+
+/* Impact section: use same fonts as front section */
+.impact-header h2 {
+  font-family: 'Merriweather', serif; /* Use Merriweather for section heading */
+  font-weight: 300; /* Light font weight */
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.impact-header p,
+.impact-card p {
+  font-family: 'Nunito', sans-serif; /* Use Nunito for body and card text */
+}
+
+/* Impact section: use Nunito for card headings */
+.impact-card h3 {
+  font-family: 'Nunito', sans-serif; /* Use Nunito for card headings */
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.impact-header p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 30px auto 40px auto; /* Added larger margin above the text */
+  color: #333;
+}
+
+/* Impact cards: always vertical (column) on all screen sizes */
+.impact-cards {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  align-items: center; /* Center cards horizontally */
+  gap: 0; /* Remove space between cards */
+}
+
+/* Impact card: image with text below (not overlay) */
+.impact-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Increased from 400px to 600px for larger images */
+  height: 340px;    /* Increased from 240px to 340px for larger images */
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.impact-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: brightness(1); /* No darken, normal image */
+}
+
+/* Place text below the image for all cards */
+.impact-text-below {
+  padding: 25px 20px 10px 20px;
+  text-align: center;
+}
+
+/* For the first card, add a left margin to the text */
+.impact-card:first-child .impact-text-below {
+  margin-left: 0;
+  text-align: left;
+}
+
+.impact-card {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 0;
+  min-height: unset;
+  max-width: 400px;
+  border-radius: 12px;
+  margin-bottom: 0; /* Remove margin between cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impact-card h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.impact-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Impact cards: image left, text right (horizontal layout) */
+.impact-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0; /* Remove space between cards */
+}
+
+.impact-card {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  min-height: unset;
+  max-width: 900px;
+  border-radius: 0;
+  margin-bottom: 0; /* Remove margin between cards */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+}
+
+.impact-image-container {
+  position: relative;
+  width: 55%;
+  max-width: 600px; /* Increased from 400px to 600px for larger images */
+  height: 340px;    /* Increased from 260px to 340px for larger images */
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.impact-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; /* No rounded corners */
+  filter: brightness(1);
+}
+
+.impact-text-below {
+  width: 45%;
+  padding: 30px 30px 30px 50px; /* Same left margin for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: left;
+}
+
+.impact-card h3 {
+  font-family: 'Merriweather', serif; /* Use Merriweather for card headings */
+  font-weight: 300; /* Light font weight */
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+  margin-top: 0;
+  color: #fff;
+}
+
+.impact-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem; /* Larger body text */
+  margin: 0;
+  color: #fff;
+}
+
+/* Responsive for mobile: stack image above text */
+@media (max-width: 900px) {
+  .impact-card {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .impact-image-container, .impact-text-below {
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    padding: 0;
+  }
+  .impact-text-below {
+    padding: 25px 10px 10px 10px;
     text-align: center;
   }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .impact-image {
-    width: 300px;
-  }
+/* Footer bar styles - similar to menu bar */
+.footer-bar {
+  background-color: #e2e3e8; /* Same lighter grey as menu bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  padding: 0 30px;
+  margin-top: 0; /* Remove top margin so it touches the black section */
 }
+
+.footer-bar p {
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Add hover effect for ACT NOW button to match GIVE TODAY button */
+.act-now-btn:hover {
+  background-color: #ffd700;
+}
+
